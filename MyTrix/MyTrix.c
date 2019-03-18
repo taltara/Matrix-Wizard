@@ -20,14 +20,13 @@ void paintMatrix(int row, int column, float *matrix, float *matrixSolution, int 
 
 		if (newLine == column) {
 
-			if		(mode == 1) printf("| %.3f\n\n", matrixSolution[(i / column)]);
-			else if (mode == 2) printf("\n\n");
+			if		(mode == 1) printf("| %.3f\n", matrixSolution[(i / column)]);
+			else if (mode == 2) printf("\n");
 			newLine = 0;
 		}
 		newLine += 1;
 	}
-
-	printf("\n");
+	printf("\n\n");
 }
 
 // 'gaussush' function for gaussin' around and stuff
@@ -64,7 +63,7 @@ float gaussush(int row, int column, float *matrix, float *matrixSolution, float 
 
 				// first checking if 1 in a different row exists for swapping
 
-				if (matrix[(j * column) + i] == 1) {
+				if (matrix[(j * column) + i] == 1 && done == 0) {
 					//printf("here1\n");
 					// row to swap with
 					targetRow = j;
@@ -311,6 +310,87 @@ float gaussush(int row, int column, float *matrix, float *matrixSolution, float 
 	// step 3
 	// matrix solutions and conclusions
 
+	// solutions:
+
+	// dynamicly build array for storing known free elements
+	int * freeAnStore;
+	freeAnStore = (int *)calloc(column, sizeof(int));
+
+	int zeRow = 0;
+	int zeRowCount = 0;
+
+	for (int Q = 0; Q < row; Q++) {
+
+		for (int QQ = 0; QQ < column; QQ++) {
+
+			if (matrix[(Q * column) + QQ] == 0) zeRowCount += 1;
+		}
+
+		if (zeRowCount == column && matrixSolution[Q] != 0) zeRow += 1;
+	}
+
+	if (zeRow == 0) {
+		printf("===============================================");
+		printf("\n\nYour solution set is:\n\n");
+		printf("S = { ");
+
+		// loop for each row calculation (row length)
+		for (int s = 0; s < row; s++) {
+
+			if (matrixSolution[s] != 0) printf("%.3f", matrixSolution[s]);
+
+			// nested loop for scanning the whole row (column length)
+			for (int ss = 0; ss < column; ss++) {
+
+				// making sure across values aren't printed (as solutions are per column)
+				if ((s * column) + ss != (s * column) + s) {
+
+					// printing only for non 0 elements
+					if (matrix[(s * column) + ss] != 0) {
+
+						// marking free elements
+						freeAnStore[ss] = 1;
+
+						if (matrix[(s * column) + ss] > 0) {
+
+							if (matrix[(s * column) + ss] != 1) printf(" - %.3f*X%d", matrix[(s * column) + ss], ss + 1);
+							else							   printf(" + X%d", ss + 1);
+						}
+						else {
+
+							if (matrix[(s * column) + ss] != 1) printf(" + %.3f*X%d", (-1 * matrix[(s * column) + ss]), ss + 1);
+							else							   printf(" + X%d", ss + 1);
+
+						}
+					}
+				}
+			}
+
+			// exit notes (like free elements)
+			if (s == row - 1) {
+
+				for (int i = 0; i < column; i++) {
+
+					if (freeAnStore[i] == 1) printf(", X%d", i + 1);
+				}
+
+				printf(" }\n\n");
+			}
+			else {
+
+				printf(", ");
+			}
+
+		}
+
+	}
+	else {
+
+		printf("===============================================");
+		printf("\n\nNo solution available.\n");
+	}
+
+	// reversability check
 	int acrossCheck1 = column;
 	int acrossCheck0 = 0;
 	int triZero = (row * (row - 1)) / 2;
@@ -335,10 +415,10 @@ float gaussush(int row, int column, float *matrix, float *matrixSolution, float 
 		}
 	}
 
-	printf("____________________________________\n\n");
+	printf("\n===============================================\n\n");
 
 	// determining reversability type
-	if (triZero == 0) {
+	if (triZero == 0 && row == column) {
 
 		if (acrossCheck1 == 0 && row == column) {
 
@@ -357,8 +437,9 @@ float gaussush(int row, int column, float *matrix, float *matrixSolution, float 
 		
 	}
 	// reversableness notes
-	if (((row == column) && (acrossCheck0 != 0 || acrossCheck1 != 0)) || (row != column) && (acrossCheck0 != 0 || acrossCheck1 != 0 && triZero != 0)) printf("Your matrix is NOT reversable ");
-	if ((row != column) && (acrossCheck0 != 0 || acrossCheck1 != 0 && triZero != 0))																  printf("(%d x %d - not square)\n\n", row, column);
+	if (((row == column) && (acrossCheck0 != 0 || acrossCheck1 != 0)) || (row != column))															  printf("Your matrix is NOT reversable ");
+
+	if (row != column)																																  printf("(%d x %d - not square)\n\n", row, column);
 	if (((row == column) && (acrossCheck0 != 0 || acrossCheck1 != 0)))																				  printf("(determinant = 0)\n\n");
 
 	printf("\n");
