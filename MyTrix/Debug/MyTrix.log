@@ -1,1 +1,5 @@
-﻿  MyTrix.vcxproj -> D:\OneDrive\Studies\MTA\שנה א\סמסטר ב\C תכנות מתקדם\Xtra\MyTrix\MyTrix\Debug\MyTrix.exe
+﻿  MyTrix.c
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(206): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(209): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(214): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+  MyTrix.vcxproj -> D:\OneDrive\Studies\MTA\שנה א\סמסטר ב\C תכנות מתקדם\Xtra\MyTrix\MyTrix\Debug\MyTrix.exe
