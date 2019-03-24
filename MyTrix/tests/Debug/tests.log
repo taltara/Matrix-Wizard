@@ -1,0 +1,6 @@
+﻿  tests.c
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\tests\tests.c(106): warning C4022: 'realloc': pointer mismatch for actual parameter 1
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\tests\tests.c(128): warning C4013: 'pow' undefined; assuming extern returning int
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\tests\tests.c(141): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\tests\tests.c(151): warning C4715: 'getNum': not all control paths return a value
+  tests.vcxproj -> D:\OneDrive\Studies\MTA\שנה א\סמסטר ב\C תכנות מתקדם\Xtra\MyTrix\MyTrix\Debug\tests.exe

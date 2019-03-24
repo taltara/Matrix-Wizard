@@ -1,0 +1,14 @@
+﻿  MyTrix.c
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(335): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(338): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(343): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(823): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(915): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(915): warning C4024: 'getNum': different types for formal and actual parameter 2
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(928): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(928): warning C4024: 'getNum': different types for formal and actual parameter 2
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(929): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'int *'
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(938): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(938): warning C4024: 'getNum': different types for formal and actual parameter 2
+d:\onedrive\studies\mta\שנה א\סמסטר ב\c תכנות מתקדם\xtra\mytrix\mytrix\mytrix\mytrix.c(846): warning C4715: 'getNum': not all control paths return a value
+  MyTrix.vcxproj -> D:\OneDrive\Studies\MTA\שנה א\סמסטר ב\C תכנות מתקדם\Xtra\MyTrix\MyTrix\Debug\MyTrix.exe
